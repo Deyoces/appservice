@@ -24,6 +24,11 @@ jobs:
         python -m venv venv
         source venv/bin/activate
         pip install -r requirements.txt
+    - name: Debug Secrets
+      run: |
+        echo "Client ID length: ${#CLIENT_ID}"
+      env:
+        CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}   
 
     - name: Log in to Azure using Client Secret
       uses: azure/login@v2
