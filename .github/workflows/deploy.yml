@@ -25,12 +25,6 @@ jobs:
         source venv/bin/activate
         pip install -r requirements.txt
 
-    - name: Diagnosticar Secretos
-      run: |
-        echo "Verificando variables en la rama staging..."
-        if [ -z "${{ secrets.AZURE_CLIENT_ID }}" ]; then echo "❌ AZURE_CLIENT_ID está VACÍO"; else echo "✅ AZURE_CLIENT_ID está PRESENTE"; fi
-        if [ -z "${{ secrets.AZURE_TENANT_ID }}" ]; then echo "❌ AZURE_TENANT_ID está VACÍO"; else echo "✅ AZURE_TENANT_ID está PRESENTE"; fi
-
     - name: Log in to Azure using Client Secret
       uses: azure/login@v2
       with:
