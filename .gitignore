@@ -1,0 +1,11 @@
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Configuración del editor
+.vscode/
+
+# Entornos virtuales (por si los usas)
+venv/
+env/
+.env
